@@ -5,7 +5,8 @@ import java.io.*;
 //Тестовый класс для работы с файловым вводом и выводом
 public class fileFirst {
     public static void main(String[] args) throws IOException {
-        demoReaderWriter();
+        encodeDemo();
+//        demoReaderWriter();
     }
 
     public static void demoInputOutput(){
@@ -46,5 +47,32 @@ public class fileFirst {
         }
         r.close();
         w.close();
+    }
+
+//    Метод создан для тестирования преобразования потока данных
+    public static void encodeDemo() throws IOException {
+//        Читаем файл как побайтно
+        InputStream fis = new FileInputStream("test.xml");
+//        Преобразуем полученный поток байтов в поток символов в кодировке UTF-8
+        Reader fr = new InputStreamReader(fis, "utf-8");
+//        Преобразуем полученный поток символов в поток байтовых строк
+        BufferedReader br = new BufferedReader(fr);
+
+        String line = br.readLine();
+        while (line != null){
+            System.out.println(line);
+            line = br.readLine();
+        }
+
+        br.close();
+        fr.close();
+        fis.close();
+    }
+
+//    Тестовый метод для ввода/вывода в память
+    public static void demoMemory() throws IOException {
+        ByteArrayInputStream bais = new ByteArrayInputStream(new byte[10]);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        baos.write(null);
     }
 }
