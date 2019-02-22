@@ -13,8 +13,7 @@ public class CollectionExample {
         for (int i=0; i<10; i++){
             set.add(new ComparableCollectionExample("" + i));
         }
-        for (Object o :
-                set) {
+        for (Object o : set) {
             //System.out.println(o);
         }
 
