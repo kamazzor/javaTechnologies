@@ -5,17 +5,18 @@ import java.io.*;
 //Тестовый класс для работы с файловым вводом и выводом
 public class fileFirst {
     public static void main(String[] args) throws IOException {
-        encodeDemo();
+//        encodeDemo();
 //        demoReaderWriter();
+        demoInputOutput();
     }
 
     public static void demoInputOutput(){
 
 //        Тестовый метод для работы с потоком байтов
         try(InputStream is =
-                    new FileInputStream("D:\\Download\\IMG_3478.MP4");
+                    new FileInputStream("D:\\Download\\sp88745.exe");
             OutputStream os =
-                    new FileOutputStream("test.mp4", true)) {
+                    new FileOutputStream("test.exe")) {
 
 //            Создаём буфер данных для чтения
             byte[] buffer = new byte[4096];
